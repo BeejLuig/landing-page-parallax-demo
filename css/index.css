@@ -1,0 +1,328 @@
+/**************************************
+*               T.O.C.
+*     ===========================
+*     1. Variables
+*     2. Mixins
+*     3. General Element Styling
+*     4. Grid Layout
+*     5. Section Positioning
+*     6. Section Backgrounds
+*     7. Section Styling
+*     8. Elements
+*     9. Media Queries
+*     ===========================
+*
+**************************************/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/*************************************/
+/*************************************/
+/************************************/
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #787878; }
+
+body {
+  background: linear-gradient(135deg, #e9e9e9, rgba(233, 233, 233, 0.7)); }
+
+.grid-container, .grid-container__main {
+  background-color: #fff;
+  box-shadow: 0 0 4px #aaa; }
+
+small {
+  color: #929292; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #787878; }
+
+/************************************/
+.grid-container, .grid-container__main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0;
+  grid-auto-rows: minmax(100px, auto); }
+  .grid-container__main {
+    max-width: 1302px; }
+  @media all and (max-width: 1000px) {
+    .grid-container, .grid-container__main {
+      grid-template-columns: repeat(2, 1fr); } }
+
+.grid-col__left, .grid-col__left-lean-in {
+  grid-column: 1; }
+  .grid-col__left-lean-in {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 40%; }
+    @media all and (max-width: 1000px) {
+      .grid-col__left-lean-in {
+        padding-left: 20%; } }
+  @media all and (max-width: 1000px) {
+    .grid-col__left, .grid-col__left-lean-in {
+      padding-right: 10px; } }
+.grid-col__middle {
+  grid-column: 2; }
+  @media all and (max-width: 1000px) {
+    .grid-col__middle {
+      display: none; } }
+.grid-col__right, .grid-col__right-lean-in {
+  grid-column: 3; }
+  .grid-col__right-lean-in {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-right: 40%; }
+    @media all and (max-width: 1000px) {
+      .grid-col__right-lean-in {
+        padding-right: 20%; } }
+  @media all and (max-width: 1000px) {
+    .grid-col__right, .grid-col__right-lean-in {
+      grid-column: 2;
+      padding-left: 10px; } }
+.grid-col__full-width {
+  grid-column: 1 / 4; }
+  @media all and (max-width: 1000px) {
+    .grid-col__full-width {
+      grid-column: 1 / 3; } }
+
+.grid-row__1 {
+  grid-row: 1; }
+
+.grid-row__2 {
+  grid-row: 2; }
+
+.grid-row__3 {
+  grid-row: 3; }
+
+.grid-row__4 {
+  grid-row: 4; }
+
+.grid-row__5 {
+  grid-row: 5; }
+
+.grid-row__6 {
+  grid-row: 6; }
+
+/***************************/
+.floating-phone {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  pointer-events: none;
+  top: 23em;
+  z-index: 1; }
+  .floating-phone img {
+    max-width: 100%; }
+    @media all and (max-width: 1302px) {
+      .floating-phone img {
+        width: 40%; } }
+    @media all and (max-width: 1140px) {
+      .floating-phone img {
+        width: 30%; } }
+  @media all and (max-width: 1302px) {
+    .floating-phone {
+      top: 30em; } }
+  @media all and (max-width: 1140px) {
+    .floating-phone {
+      top: 33em; } }
+  @media all and (max-width: 1000px) {
+    .floating-phone {
+      display: none; } }
+
+.container {
+  margin: 0 auto; }
+
+#hero .blurred-background {
+  width: 100%;
+  height: 500px; }
+#hero .hero-foreground {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 100px; }
+#hero h2 {
+  text-align: center; }
+@media all and (max-width: 700px) {
+  #hero {
+    top: 2em; }
+    #hero h2 {
+      font-size: 1.5 em;
+      padding: 0 40px; } }
+
+.features div, .features__left div, .features__right div {
+  margin-top: 50px; }
+.features__left {
+  text-align: right; }
+.features__right {
+  text-align: left; }
+
+.call-to-action {
+  height: 300px;
+  text-align: center;
+  justify-content: center; }
+  .call-to-action h4 {
+    margin-bottom: 6px; }
+
+#contact {
+  height: auto; }
+  #contact .contact-row {
+    min-height: 50px;
+    text-align: center; }
+    #contact .contact-row h1 {
+      margin-bottom: 6px; }
+    #contact .contact-row p {
+      padding-bottom: 6px; }
+
+footer ul {
+  padding-left: 0;
+  list-style-type: none;
+  text-align: center;
+  height: 100%; }
+footer li {
+  display: inline-block;
+  height: 100%;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  text-align: center; }
+  footer li:not(:last-of-type) {
+    padding-right: 3px; }
+
+/***************************/
+#hero .blurred-background {
+  background-image: url("https://static.pexels.com/photos/167699/pexels-photo-167699.jpeg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-attachment: fixed;
+  background-origin: border-box;
+  background-size: cover;
+  filter: blur(1px) grayscale(80%); }
+
+.call-to-action {
+  background: gainsboro; }
+
+#contact {
+  background: #fff; }
+
+footer {
+  background: gainsboro; }
+
+/***************************/
+#hero .hero-foreground h2 {
+  color: white;
+  text-shadow: 1px 1px 1px #111; }
+
+#contact .contact-row h1 {
+  font-variant: all-small-caps; }
+
+/***************************/
+#logo {
+  max-width: 200px;
+  height: 200px;
+  color: white;
+  background-image: url("https://raw.githubusercontent.com/BeejLuig/BeejLuig.github.io/master/img/logo.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto; }
+  @media all and (max-width: 700px) {
+    #logo {
+      width: 150px;
+      height: 150px; } }
+
+#social-links {
+  padding-bottom: 50px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10px;
+  list-style-type: none;
+  text-align: center; }
+  #social-links li {
+    display: inline; }
+  #social-links a {
+    color: #888; }
+
+form {
+  margin-bottom: 60px;
+  margin-top: 20px; }
+  form button {
+    background: linear-gradient(135deg, #5000dc, rgba(0, 0, 220, 0.9), #5000dc);
+    border: 1px solid #5000dc;
+    color: #fff;
+    font-size: 0.8em;
+    line-height: 29px;
+    outline: none;
+    padding: 7px 19px;
+    cursor: pointer; }
+  form input {
+    line-height: 30px;
+    width: 400px;
+    outline: 2px solid #aaa;
+    padding: 4px; }
+
+.app-store {
+  display: block;
+  padding: 20px;
+  width: 100%;
+  z-index: 2; }
+
+#android-store {
+  display: block;
+  height: 50px;
+  width: 189px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-image: url("https://raw.githubusercontent.com/BeejLuig/BeejLuig.github.io/master/img/play-badge.png");
+  background-size: contain;
+  text-align: center; }
+
+#ios-store {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  width: 189px; }
+
+/***************************/
+@media all and (max-width: 1302px) {
+  .container {
+    margin: 0 20px; } }
+@media all and (max-width: 700px) {
+  .grid-container, .grid-container__main {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-rows: minmax(auto, auto); }
+
+  [class*="grid-col"] {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%; }
+
+  [class*="grid-row"] {
+    grid-row: auto; }
+
+  [class*="features"] {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 0;
+    padding-top: 0;
+    text-align: center; }
+
+  .call-to-action {
+    height: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px; }
+
+  .features__right {
+    padding-bottom: 2em; }
+
+  #contact {
+    padding-left: 20px;
+    padding-right: 20px; }
+    #contact input {
+      width: 70%; } }
+
+/*# sourceMappingURL=index.css.map */
